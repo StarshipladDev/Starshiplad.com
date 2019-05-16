@@ -1,0 +1,106 @@
+html{
+	height:100%;
+	width:100%;
+}
+body{
+	
+	background-image:url("background.jpg");
+	height:90%;
+	padding-top:5%;
+}
+main{
+	background-image:url("background.jpg");
+}
+head{
+	/*needs to be minimum 128 pixles for logo image   */
+	min-height:128px;
+	position:fixed;
+	max-height:5%;
+	width:100%;
+}
+/*Gives  any table a 'grid' layout*/
+th, td{
+	border: 1px solid black;
+ }
+ /* makes password siplay grey */
+input.password,textarea{
+	 background-color:grey;
+	 border:0px;
+	 border-style:none;
+ }
+ der{
+	 font-weight:bold;
+	 font-size:300%
+ }
+ #headspace{
+	background-color:#327cf2;
+	float-top:0%;
+	padding:5%;
+	float-bottom:2%
+	padding-bottom:0%
+	width:100%;
+}
+ .menuitem{
+	display:inline-block;
+	color:black;
+	background-color:#ff9900;
+	width:100%;
+	border-radius:25px;
+	font-size:32px;
+	padding:10px;
+	float-bottom:10px;
+	color:black;
+}
+.readPanel{
+	padding:5%;
+	padding-left:2%;
+	float:2%;
+	background-color:grey;
+	border-radius:25px;
+}
+a {
+	color:#259b31;
+    text-decoration: none !important;
+}
+ @media only screen and (min-width: 1000px) {
+#headspace{
+	background-color:yellow;
+	float-top:2%;
+	padding:5%;
+	width:100%;
+}
+.readPanel{
+	padding:5%;
+	padding-left:2%;
+	float:2%;
+	background-color:grey;
+	border-radius:25px;
+}
+.menuitem{
+	display:inline-block;
+	color:black;
+	background-color:#ff9900;
+	max-width:20%;
+}
+.displayTable{
+	border: 1px solid black;
+}
+.hiddenOver{
+	color:black;
+	background-color:#ff9900;
+	position: relative;
+	display: inline-block;
+}
+.hiddenUnder{
+	color:black;
+	background-color:#ff9900;
+	display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.hiddenOver:hover .hiddenUnder{
+	display:block;
+}
+ }
