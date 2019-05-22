@@ -1,6 +1,7 @@
 html{
 	height:100%;
 	width:100%;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
 }
 body{
 	
@@ -17,20 +18,20 @@ head{
 	position:fixed;
 	max-height:5%;
 	width:100%;
-}
+}s
 /*Gives  any table a 'grid' layout*/
 th, td{
 	border: 1px solid black;
  }
- /* makes password siplay grey */
+ /* makes password display grey */
 input.password,textarea{
-	 background-color:grey;
+	 background-color:#4d5d77;
 	 border:0px;
 	 border-style:none;
  }
  der{
 	 font-weight:bold;
-	 font-size:300%
+	 font-size:150%
  }
  #headspace{
 	background-color:#327cf2;
@@ -62,25 +63,33 @@ a {
 	color:#259b31;
     text-decoration: none !important;
 }
+ /* DESKTOP ONLY */
  @media only screen and (min-width: 1000px) {
 #headspace{
-	background-color:yellow;
+	background-color:#327cf2;
 	float-top:2%;
 	padding:5%;
+	padding-top:0%;
+	padding-bottom:0%;
+	padding-left:0%;
 	width:100%;
+	border-radius:25px;
 }
+/*#4d5d77- grey 
+#327cf2 - blue
+  */
 .readPanel{
-	padding:5%;
+	padding:4%;
 	padding-left:2%;
-	float:2%;
-	background-color:grey;
+	float:5%;
+	background-color:#4d5d77;
 	border-radius:25px;
 }
 .menuitem{
 	display:inline-block;
 	color:black;
 	background-color:#ff9900;
-	max-width:20%;
+	max-width:15%;
 }
 .displayTable{
 	border: 1px solid black;
