@@ -3,8 +3,9 @@
   !!!!! Title :  SHOULD BE THIS BUT ISN"T#cc0000 !!!!!!
 #008060 - Darker shade, Black text - Title
 Section :  #00cc99 - Shadow white text 
-Background/Main : #4d4d4d : 15% on each side
+Background/Main Grey : #4d4d4d : 15% on each side
 Sides(body) & Title:#ff4d4d 
+White/Tan sections that split up 'Sections' #4d4d4d 
 
 *
 
@@ -41,7 +42,6 @@ body{
 }
 #main{
 	background-color:#4d4d4d;
-	
 }
 .headerSection{
 	background-color:#008060 ;
@@ -55,6 +55,12 @@ body{
 	color:white;
 	text-shadow: 1px 1px #000000;
 	text-align:center;
+}
+.menuitem a{
+	color:black;
+}
+.menuitem{
+	background-color:#ff4d4d;
 }
 
 /*
@@ -88,20 +94,37 @@ DESKTOP VERSION
 	 font-weight:bold;
 	 font-size:150%
 	}
+	body{
+		height: 100%;
+		padding: 0px;
+	}
+	img{
+		display: inline;
+	}
+	#ZimaBlue{
+		display:inline;
+		text-align: center;
+	}
 	#main{
 		width:70%;
 		margin:10%;
 		padding-left:5%;
 		padding-right:5%;
 		margin-top:0px;
-		padding-top:5%;
+		padding-top:10%;
 		padding-bottom:0px;
 		border-radius:25px;
 		border: 1px solid black;
+		margin-top:5%;
 	}
 	#headSpace{
+	text-align: center;
 	background-color:#cc0000;
+	position: fixed;
 	width:90%;
+	top: 0px;
+	margin-left: 0%;
+	margin-top:0px;
 	padding:5%;
 	padding-top:0px;
 	float:0%;
@@ -122,6 +145,8 @@ DESKTOP VERSION
 	}
 	.Section{
 		width:100%;
+		border-collapse: separate;
+    border-spacing: 20px;
 	}
 	.half{
 		width:40%;
@@ -135,7 +160,6 @@ DESKTOP VERSION
 		padding:2%;
 	}
 	.headerSection{
-		
 		border-radius:25px;
 		border: 1px solid black;
 		max-width : 100%;
@@ -144,30 +168,31 @@ DESKTOP VERSION
 		
 	}
 	.hiddenOver{
-	color:black;
-	background-color:#ff9900;
-	position: relative;
-	display: inline-block;
+		position: relative;
+		display: inline-block;
 	}
 	.hiddenUnder{
-	color:black;
-	background-color:#ff9900;
-	display: none;
-	position: absolute;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+		display:  none !important;
+		position: absolute;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		margin: 0px;
 	}
 	.hiddenOver:hover .hiddenUnder{
-	display:block;
+		 display:block !important;
+	}
+	.menuitem:hover{
+		box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
 	}
 	.menuitem{
-	display:inline-block;
-	color:black;
-	background-color:#ff9900;
-	max-width:12%;
-	min-height:100%;
-	max-height:100%;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		display:inline-block;
+		border-radius: 5px;
+		padding: 1%;
+		max-width:12%;
+		min-height:100%;
+		max-height:100%;
 	}
 }
 /*
