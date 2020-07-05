@@ -12,8 +12,9 @@
 	<div class="readPanel full">
 		<?php
 		$servername = "localhost";
-		$username = "u963414567_sld";
-		$password = "g1thub";
+						$username = "u963414567_sld";
+						$password = "g1thub";
+						$dbname = "u963414567_db1";
 		// Create connection
 		$conn = new mysqli($servername, $username, $password);
 		// Check connection
