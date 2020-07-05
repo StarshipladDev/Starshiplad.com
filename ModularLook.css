@@ -44,6 +44,7 @@ body{
 	background-color:#4d4d4d;
 }
 .headerSection{
+	
 	background-color:#008060 ;
 	color:white;
 	text-shadow: 1px 1px #000000;
@@ -53,7 +54,7 @@ body{
 .readPanel{
 	background-color:#00cc99;
 	color:white;
-	text-shadow: 1px 1px #000000;
+	font-size: 140%;
 	text-align:center;
 }
 .menuitem a{
@@ -61,7 +62,13 @@ body{
 }
 .menuitem{
 	background-color:#ff4d4d;
+	font-size: 140%;
 }
+
+	a {
+		color:#ff4d4d ;
+		text-decoration: none !important;
+	}
 
 /*
 
@@ -86,10 +93,6 @@ DESKTOP VERSION
 */
 @media only screen and (min-width: 1000px) {
 	
-	a {
-		color:#ff4d4d ;
-		text-decoration: none !important;
-	}
 	der{
 	 font-weight:bold;
 	 font-size:150%
@@ -99,11 +102,16 @@ DESKTOP VERSION
 		padding: 0px;
 	}
 	img{
-		display: inline;
+		
 	}
 	#ZimaBlue{
 		display:inline;
+		border-collapse: separate;
+    border-spacing: 20px;
 		text-align: center;
+		margin:1%;
+		padding:0%;
+		margin-top:0%;
 	}
 	#main{
 		width:70%;
@@ -118,20 +126,21 @@ DESKTOP VERSION
 		margin-top:5%;
 	}
 	#headSpace{
-	text-align: center;
-	background-color:#cc0000;
-	position: fixed;
-	width:90%;
-	top: 0px;
-	margin-left: 0%;
-	margin-top:0px;
-	padding:5%;
-	padding-top:0px;
-	float:0%;
-	min-height:5%;
-	max-height:20%;
-	border-radius:25px;
-	border: 1px solid black;
+		text-align: center;
+		background-color:#cc0000;
+		position: fixed;
+		width:90%;
+		top: 0px;
+		margin-left: 0%;
+		margin-top:0px;
+		padding:5%;
+		padding-top:0px;
+		padding-bottom:1%;
+		float:0%;
+		min-height:5%;
+		max-height:20%;
+		border-radius:25px;
+		border: 1px solid black;
 
 	}
 	#Image{
@@ -165,7 +174,7 @@ DESKTOP VERSION
 		max-width : 100%;
 		margin:1%;
 		padding:2%;
-		
+		font-size: 160%;
 	}
 	.hiddenOver{
 		position: relative;
@@ -187,9 +196,9 @@ DESKTOP VERSION
 	}
 	.menuitem{
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		display:inline-block;
+		display:inline-table;
 		border-radius: 5px;
-		padding: 1%;
+		padding: .5%;
 		max-width:12%;
 		min-height:100%;
 		max-height:100%;

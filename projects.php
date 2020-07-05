@@ -1,18 +1,21 @@
-<!DOCTYPE = HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <?php
-	include "header.php";
+	include "nuHeader.php";
 ?>
 </head>
 <body>
-
+<div id="main">
+		<div class ="Section">
+			<div class = "headerSection">
+				<der>Projects</der>
+			</div>
+			<div class="readPanel full">
+			<der>Place Projects Here</der>
+			</div>
+		</div>
+</div>
 </body>
 
-
-<footer>
-<?php
-include "footer.php";
-?>
-</footer>
 </html>

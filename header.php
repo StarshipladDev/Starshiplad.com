@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="looks.css">
 <link rel="icon" type="image/png" href="http://www.starshiplad.com/favicon.png"/>
 <meta name="content" content="The Home of Starshiplad">
-<Title>Starshiplad's Home</Title>
+<Title> "Starshiplad's Home"</Title>
 <div id="headspace">
 <div id="Image">
 <a href= "/index.php">  <img src="/LogoFull.png" alt="Starshiplad.Com" height="128" width="128"></a>

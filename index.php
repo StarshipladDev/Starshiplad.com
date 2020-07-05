@@ -7,6 +7,7 @@
 	include "nuHeader.php";
 ?>
 
+						
 <div id="main">
 	<div class ="Section">
 		<div class = "headerSection">
