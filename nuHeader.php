@@ -9,6 +9,11 @@
 <a href= "/index.php">  <img src="/LogoFull.png" alt="Starshiplad.Com" height="128" width="128"></a>
 </div>
 <div id="ZimaBlue">
+<div class="menuitem">
+	<div id="Image">
+		<a href= "/index.php">  <img src="/LogoFull.png" alt="Starshiplad.Com" height="128" width="128"></a>
+	</div>
+</div>
 <div class="menuitem"><a href="http://www.starshiplad.com/index.php">Home</a></div>
 <div class="menuitem"><a href="https://github.com/StarshipladDev">Projects</a></div>
 <div class="menuitem"><a href="http://www.starshiplad.com/input.php">Input Info</a></div>

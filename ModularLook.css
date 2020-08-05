@@ -17,21 +17,8 @@ GENERIC ASPECTS SUCH AS COLOURS
 
 
 */
-@font-face {
-font-family: ‘PAPYRUS’;
-src: url(‘http://moeinc.us/wp-content/themes/x-child/fonts/PAPYRUS.eot’) format(‘eot’);
-    url(‘http://moeinc.us/wp-content/themes/x-child/fonts/PAPYRUS.woff’) format(‘woff’),
-    url(‘http://moeinc.us/wp-content/themes/x-child/fonts/PAPYRUS.ttf’) format(‘truetype’),
-    url(‘http://moeinc.us/wp-content/themes/x-child/fonts/PAPYRUS.svg’) format(‘svg’);
-	html{
-	 font-family : ‘PAPYRUS’;
-  }
-  #main{
-	font-family : ‘PAPYRUS’;
-  }
-}
 html{
-	font-family: fantasy;
+	font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	width:100%;
 	height:100%;
 }
@@ -41,6 +28,7 @@ body{
 	background-color:#ff4d4d ;
 }
 #main{
+	font-family : pap;
 	background-color:#4d4d4d;
 }
 .headerSection{
@@ -69,6 +57,11 @@ body{
 		color:#ff4d4d ;
 		text-decoration: none !important;
 	}
+	der{
+	 font-weight:bold;
+	 font-size:150%;
+	 shadow: 1px 1px #000000;
+	}
 
 /*
 
@@ -93,10 +86,7 @@ DESKTOP VERSION
 */
 @media only screen and (min-width: 1000px) {
 	
-	der{
-	 font-weight:bold;
-	 font-size:150%
-	}
+	
 	body{
 		height: 100%;
 		padding: 0px;
@@ -119,13 +109,14 @@ DESKTOP VERSION
 		padding-left:5%;
 		padding-right:5%;
 		margin-top:0px;
-		padding-top:10%;
+		padding-top:15%;
 		padding-bottom:0px;
 		border-radius:25px;
 		border: 1px solid black;
 		margin-top:5%;
 	}
 	#headSpace{
+		display:table;
 		text-align: center;
 		background-color:#cc0000;
 		position: fixed;
@@ -155,7 +146,7 @@ DESKTOP VERSION
 	.Section{
 		width:100%;
 		border-collapse: separate;
-    border-spacing: 20px;
+		border-spacing: 20px;
 	}
 	.half{
 		width:40%;
@@ -167,6 +158,7 @@ DESKTOP VERSION
 	.full{
 		width:90%;
 		padding:2%;
+		display:table-cell;
 	}
 	.headerSection{
 		border-radius:25px;
@@ -174,6 +166,8 @@ DESKTOP VERSION
 		max-width : 100%;
 		margin:1%;
 		padding:2%;
+		padding-bottom: :0px;
+		margin-bottom: 0px;
 		font-size: 160%;
 	}
 	.hiddenOver{
@@ -196,10 +190,12 @@ DESKTOP VERSION
 	}
 	.menuitem{
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		display:inline-table;
+		display:table-cell;
 		border-radius: 5px;
-		padding: .5%;
+		padding: 2%;
+		margin-bottom: 0%; 
 		max-width:12%;
+		min-width: 8%;
 		min-height:100%;
 		max-height:100%;
 	}
