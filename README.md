@@ -23,9 +23,9 @@
 ## View of progress
 
 ### Q1 2018 - Old Design
-![Old_Design] (Old.PNG)
+![Old_Design](Old.PNG)
 ### Q2 2020 - Latest design
-![New_Design] (SalesPitch.PNG)
+![New_Design](SalesPitch.PNG)
 ## Latest Build
 25/08/2020- Inital Build New Design
 
