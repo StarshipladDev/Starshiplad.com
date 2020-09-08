@@ -11,10 +11,9 @@
 	<!-- Echo inside a .css format will display text in that style -->
 	<div class="readPanel full">
 		<?php
-		$servername = "";
-						$username = "";
-						$password = "";
-						$dbname = "";
+		$servername = "localhost";
+		$username = "u963414567_sld";
+		$password = "g1thub";
 		// Create connection
 		$conn = new mysqli($servername, $username, $password);
 		// Check connection

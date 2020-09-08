@@ -16,9 +16,9 @@
 
 				<?php
 				$servername = "";
-						$username = "";
-						$password = "";
-						$dbname = "";
+				$username = "";
+				$password = "";
+				$dbname = "";
 
 				// Create connection
 				$conn = new mysqli($servername, $username, $password, $dbname);
@@ -43,11 +43,12 @@
 				else{
 					*/
 				if(empty($info)===FALSE && ( ctype_space($info)===FALSE)){
-					$attempt= "INSERT INTO ImportantInfo(Name,Info) VALUES('".$_GET["name"]."','".$_GET["info"]."')";
+					$attempt= "INSERT INTO ImportantInfo(Name,Info,Date) VALUES('".$_GET["name"]."','".$_GET["info"]."','" . date("Y-m-d H:i:s") . "')";
 					if($conn->query($attempt) === TRUE ){
 						echo "Information added successfully!<br>Name: ".$name."<br>Important Information:".$info;
 					}else{
 						echo"Error submitting data, probably left info blank";
+						echo"Attempt was" . $attempt;
 					}	
 				}else{
 						echo"Error submitting data, probably left info blank";

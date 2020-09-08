@@ -9,6 +9,20 @@
 	<div id="main">
 			<div class ="Section">
 				<div class = "headerSection">
+				<der>Hall Of Fame </der>
+				
+				</div>
+				<div class="readPanel full">
+					<der>The XSS Hall Of Fame </der><br>
+					The <a href="http://www.starshiplad.com/proof.php">C# Hacktool</a> I create required a unprotected page to test XSS attacks.
+					The page <a href="http://www.starshiplad.com/input.php">input</a> uses PHP to store data in a format that can be read on the 
+					page <a href="http://www.starshiplad.com/input.php">output</a>. Occasionaly people put some very entertaining/intereting XSS 
+					attacks in, and before I clean the output page, I will log my favourite examples <a href="http://www.starshiplad.com/halloffame.php">here</a>.
+					
+				</div>
+			</div>	
+			<div class ="Section">
+				<div class = "headerSection">
 					<der>Data Output</der>
 				</div>
 				<div class="readPanel full">
@@ -20,11 +34,11 @@
 						</tr>
 						<?php
 						//Basic parameters
+						$servername = "localhost";
+						$username = "u963414567_sld";
+						$password = "g1thub";
+						$dbname = "u963414567_db1";
 
-						$servername = "";
-						$username = "";
-						$password = "";
-						$dbname = "";
 						// Create connection
 						$conn = new mysqli($servername, $username, $password, $dbname);
 						//Kill attempt and dispaly error if database invalid
