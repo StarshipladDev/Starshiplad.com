@@ -160,11 +160,14 @@ function ConvertBinaryToInt(binaryString1){
         if(i==100){
             break;
         }
-        if(binaryString1[i]=="1"){
+        if(binaryString1.charAt(i)=='1'){
 			console.log("While converting, 1 found at position "+i+ ", adding "+value);
             valueback+=value;
+			
+			value = value*2;
         }
-		if(binaryString1[i]=="0"){
+		if(binaryString1.charAt(i)=='0'){
+			
 			value = value*2;
 		}
         i++;
@@ -216,6 +219,15 @@ function ConvertIntToBinary(input){
 }
 //END SECTION UTILITY FUNCTIONS	
 
+
+
+			/// !!!!NOTE!!!!
+
+			/*  PERFORMADDITION USES A DIFFERENT FORMAT TO ADD NUMBERS. THIS HAS BEEN KEPT TO SHOW PROGRESS OF DEVELOPMENT AND ALGORITHIMS */
+
+			/// !!!!NOTE!!!
+
+
 //START SECTION  DIVISION
 /**
 * PerformDivision converts two binary-representation strings into ints, divides them, and then displays the output in a binary format in the 'res' element.
@@ -255,10 +267,10 @@ function PerformDivision(input1 ,input2){
 * Param input 2 - the subtraction , what is to the right of the '-' operator.
 */
 function PerformSubtraction(input1 ,input2){
-    document.getElementById("res").innerHTML ="combining "+input1+" and "+input2;
+    document.getElementById("res").innerHTML ="SUBTRACTING "+input1+" and "+input2;
     var i=0;
     var inputNew= [""];
-    /*Add trailign zeros */
+    /*Add trailigng zeros */
     if(input1.length>input2.length){
         input2=TrailingZeroes(input2,input1.length-input2.length);
     }
@@ -267,54 +279,13 @@ function PerformSubtraction(input1 ,input2){
         input1=TrailingZeroes(input1,input2.length-input1.length);
     }
     /*END Add trailing zeros */
-    console.log("preswitch: "+input1+" and "+input2);
-
-    input1=Spin(input1);
-    input2=Spin(input2);
-    console.log("Converting "+input1+" and "+input2);
-    /* Combine both arrays */
-    var value=1;
-    var input1value=0;
-    var input2value=0;
-    while(i<input1.length && i<input2.length){
-        if(i==100){
-            break;
-        }
-        if(input1[i]=="1"){
-            input1value+=value;
-        }
-        if(input2[i]=="1"){
-            input2value+=value;
-        }
-        value = value*2;
-        i++;
-        
-    }
+    var input1value=ConvertBinaryToInt(input1);
+    var input2value=ConvertBinaryToInt(input2);
     console.log("Converted values are "+input1value+" and "+input2value);
-    console.log("Subtracted they are "+(input1value-input2value));
-    var outputValue=input1value-input2value;
-    var outputString="";
-    i=input1.length-1; /* Same as input2 length due to trailing zeros */
-    
-    while(i>-1){
-        
-        value=value/2;
-        console.log("outputValue :"+outputValue+" value : "+value+". Performing calc.");
-        if(outputValue>=value){
-            console.log("outputValue "+outputValue+" is minusing "+value+" from it");
-            outputString+="1";
-            outputValue-=value;
-        }else{
-            
-            console.log("0 added");
-            outputString+="0";
-        }
-        
-        console.log("outputValue binary is "+outputString);
-        i--;
-        
-    }
-    
+    console.log("subtracted they are "+(input1value-input2value));
+    var outputValue=parseInt(input1value-input2value);
+    console.log("subtracted as an int they are "+outputValue);
+	var outputString = ConvertIntToBinary(outputValue);
     outputString=TrimZeros(outputString);
     document.getElementById("res").innerHTML=outputString;
 
@@ -328,10 +299,10 @@ function PerformSubtraction(input1 ,input2){
 * Param input 2 - the multiplier , what is to the right of the '*' operator.
 */
 function PerformMultiplication(input1 ,input2){
-    document.getElementById("res").innerHTML ="combining "+input1+" and "+input2;
+    document.getElementById("res").innerHTML ="MULTIPLYING "+input1+" and "+input2;
     var i=0;
     var inputNew= [""];
-    /*Add trailign zeros */
+    /*Add trailigng zeros */
     if(input1.length>input2.length){
         input2=TrailingZeroes(input2,input1.length-input2.length);
     }
@@ -340,60 +311,15 @@ function PerformMultiplication(input1 ,input2){
         input1=TrailingZeroes(input1,input2.length-input1.length);
     }
     /*END Add trailing zeros */
-    console.log("preswitch: "+input1+" and "+input2);
-
-    input1=Spin(input1);
-    input2=Spin(input2);
-    console.log("Converting "+input1+" and "+input2);
-    /* Combine both arrays */
-    var value=1;
-    var input1value=0;
-    var input2value=0;
-    while(i<input1.length && i<input2.length){
-        if(i==100){
-            break;
-        }
-        if(input1[i]=="1"){
-            input1value+=value;
-        }
-        if(input2[i]=="1"){
-            input2value+=value;
-        }
-        value = value*2;
-        i++;
-        
-    }
+    var input1value=ConvertBinaryToInt(input1);
+    var input2value=ConvertBinaryToInt(input2);
     console.log("Converted values are "+input1value+" and "+input2value);
-    console.log("multiplied they are "+(input1value*input2value));
-    var outputValue=input1value*input2value;
-    var outputString="";
-    i=0; /* Same as input2 length due to trailing zeros */
-    var stop =0;
-    
-        value= (value*value);
-    while(stop==0){
-        if(i==100){
-            break;
-        }
-        console.log("outputValue :"+outputValue+" value : "+value+". Performing calc.");
-        if(outputValue>=value){
-            console.log("outputValue "+outputValue+" is minusing "+value+" from it");
-            outputString+="1";
-            outputValue-=value;
-        }else{
-            
-            console.log("0 added");
-            outputString+="0";
-        }
-        if(value==1){
-            stop=1;
-        }
-        value=value/2;
-        console.log("outputValue binary is "+outputString);
-        i++;
-        
-    }
+    console.log("subtracted they are "+(input1value*input2value));
+    var outputValue=parseInt(input1value*input2value);
+    console.log("subtracted as an int they are "+outputValue);
+	var outputString = ConvertIntToBinary(outputValue);
     outputString=TrimZeros(outputString);
+    document.getElementById("res").innerHTML=outputString;
     document.getElementById("res").innerHTML=outputString;
 
 
