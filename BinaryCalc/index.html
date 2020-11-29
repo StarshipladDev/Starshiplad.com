@@ -12,14 +12,21 @@
     btnClr and btnEql have a background-color of darkgreen and a color of white.
     btnSum, btnSub, btnMul, and btnDiv have a background-color of black, a color of red.
     All the buttons in btns have a width of 25%, a height of 36px, a font-size of 18px, margin of 0px, and float value left.*/
+	html{
+	font-family:verdana,courier,arial,helvetica;
+	}
             #res{
-                background-color:lightgrey;
+                background-color:#eeeeee;
                 border-style:solid;
                 border-color:black;
                 height:48px;
                 font-size:20px;
                 text-align:center;
             }
+			der{
+				font-style: bold;
+				dont-size:200%;
+			}
             .btn{
                 width:23%;
                 border-style:solid;
@@ -29,13 +36,15 @@
                 font-size:18px;
                 margin:0px;
                 float:left;
+				display:block;
+				margin-right:1%;
             }
             .lime{
                 background-color:lightgreen;
                 color: brown;
             }
             
-            .lime{
+            .green{
                 background-color:darkgreen;
                 color: white;
             }
@@ -43,6 +52,23 @@
                 background-color:black;
                 color: red;
             }
+			.Textbox{
+				border-style:solid;
+				border-color:red;
+				border-radius:20px;
+				background-color:#eeeeee;
+				text-align:center;
+				margin :25px;
+				padding-bottom :25px;
+			}
+			#btns{
+				display:inline-block;
+				width:100%;
+				text-align:center;
+			}
+			.row{
+				width:100%;
+			}
         </style>
     </head>
     <body>
@@ -56,11 +82,11 @@
             <div class="row">
                 
                 <!-- 0 button -->
-                <div id="btn0" class="btn line">
+                <div id="btn0" class="btn lime">
                 0
                 </div>
                 <!-- 1 button -->
-                <div id="btn1" class="btn line">
+                <div id="btn1" class="btn lime">
                 1
                 </div>
                  <!-- Equals button -->
@@ -93,6 +119,42 @@
                 </div>
             </div>
         </div>
+		<div class= "Textbox">
+			<der>Binary Calculator</der> <br>
+			The following program is my output for the final <a href="https://www.hackerrank.com/domains/tutorials/10-days-of-javascript">"10 Days Of Javascript"</a> challenge on Hackerrank.com .
+		</div>
+		<div class= "Textbox"><br>
+		<der> Requirements</der>
+		The project had the following requirements to pass:
+		---
+		<i>Objective</i>
+		In this challenge, we implement a calculator that uses binary numbers. Check out the attached tutorial for learning materials.
+		<br>
+
+		<i>Task</i>
+		<br>
+		Implement a simple calculator that performs the following operations on binary numbers: addition, subtraction, multiplication, and division. Note that division operation must be integer division only; for example,
+		101(5)/10(2) = 10(2),1111(15) / 100(4) = 11(3).
+		<br>
+
+		Only one operation needs to be performed per calculation ,outputs need to be trimmed of any leading zeros. 
+		<br>
+
+
+		The calculator's initial state must look like this:
+				<br>
+
+		<img src="Display Image.png" alt="Output image"> </img>
+		---
+		</div>
+		<div class= "Textbox"><br>
+		This app is comprised of in-file CSS styling, an external <a href="Javascript.js">javascript source</a> run on 'body' loading, and the html contained within 'starshiplad/binarycalc/index.html'. 
+		</div>
+		<div class= "Textbox"><br>
+		<a href="https://www.starshiplad.com"><img alt="Starshipladdev logo" src="https://www.starshiplad.com/LogoFull.png" height=64px;> </img> </a>Developed by Starshipladdev 2020.
+		</div>
+		
+		
         <script src="Javascript.js"> </script>
     </body>
 </html>
