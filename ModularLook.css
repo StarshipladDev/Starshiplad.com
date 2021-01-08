@@ -35,6 +35,21 @@ body{
 	height:100%;
 	background-color:#ff4d4d ;
 }
+a {
+		color:#ff4d4d ;
+		text-decoration: none !important;
+	}
+der{
+	 font-weight:bold;
+	 font-size:150%;
+	 shadow: 1px 1px #000000;
+	}
+button {
+  background-color: #008060; /* Green */
+  border-color: black;
+  color: white;
+  padding: 15px 32px;
+}
 #main{
 	font-family : pap;
 	background-color:#4d4d4d;
@@ -61,16 +76,11 @@ body{
 	font-size: 140%;
 }
 
-	a {
-		color:#ff4d4d ;
-		text-decoration: none !important;
-	}
-	der{
-	 font-weight:bold;
-	 font-size:150%;
-	 shadow: 1px 1px #000000;
-	}
-
+.square{
+	height:50px;
+	width: auto;
+	border-radius: 50%;
+}
 /*
 
 
@@ -100,8 +110,8 @@ DESKTOP VERSION
 		padding: 0px;
 	}
 	img{
-		max-width:80%;
-		max-height:80%;
+		max-width:100%;
+		max-height:100%;
 	}
 	#ZimaBlue{
 		display:inline;
@@ -127,24 +137,18 @@ DESKTOP VERSION
 	#headSpace{
 		display:table;
 		text-align: center;
-		background-color:#cc0000;
 		position: fixed;
 		width:90%;
 		top: 0px;
 		margin-left: 0%;
 		margin-top:0px;
-		padding:5%;
 		padding-top:0px;
 		padding-bottom:1%;
 		float:0%;
-		min-height:5%;
-		max-height:20%;
-		border-radius:25px;
-		border: 1px solid black;
 
 	}
 	#Image{
-		display:table-cell;
+		display:inline-block;
 		padding: 2%;
 		margin-bottom: 0%; 
 		
@@ -206,9 +210,9 @@ DESKTOP VERSION
 	}
 	.menuitem{
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		display:table-cell;
+		display:inline-block;
 		border-radius: 5px;
-		padding: 2%;
+		padding: 1%;
 		margin-bottom: 0%; 
 		max-width:12%;
 		min-width: 8%;

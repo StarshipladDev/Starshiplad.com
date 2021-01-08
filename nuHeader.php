@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="ModularLook.css">
-<link rel="icon" type="image/png" href="http://www.starshiplad.com/favicon.png"/>
+<link rel="stylesheet" href="https://www.starshiplad.com/ModularLook.css">
+<link rel="icon" type="image/png" href="https://www.starshiplad.com/favicon.png"/>
 <meta name="content" content="The Home of Starshiplad">
 <Title> "Starshiplad's Home"</Title>
 </head>
