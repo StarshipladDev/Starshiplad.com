@@ -49,10 +49,10 @@ html{
 body{
 	width:100%;
 	height:100%;
-	background-color:#ff4d4d ;
+	background-color:#f7951e ;
 }
 a {
-		color:#ff4d4d ;
+		color:#f7951e ;
 		text-decoration: none !important;
 	}
 der{
@@ -61,7 +61,7 @@ der{
 	 shadow: 1px 1px #000000;
 	}
 button {
-  background-color: #008060; /* Green */
+  background-color: #1f7d38; /* Green */
   border-color: black;
   color: white;
   padding: 15px 32px;
@@ -72,14 +72,14 @@ button {
 }
 .headerSection{
 	
-	background-color:#008060 ;
+	background-color:#1f7d38 ;
 	color:white;
 	text-shadow: 1px 1px #000000;
 	text-align:center;
 	
 }
 .readPanel{
-	background-color:#00cc99;
+	background-color:#279c46;
 	color:white;
 	font-size: 140%;
 	text-align:center;
@@ -88,7 +88,7 @@ button {
 	color:black;
 }
 .menuitem{
-	background-color:#ff4d4d;
+	background-color:#f7951e;
 	font-size: 140%;
 }
 
