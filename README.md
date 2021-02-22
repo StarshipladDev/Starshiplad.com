@@ -1,6 +1,6 @@
 # www.Starshiplad.com -> (Personal Website Project )
 
-![Starshiplad](SalesPitch.PNG)
+![Starshiplad](SalesPitch.png)
 
 ## Notes/Know Bugs:
 
@@ -23,10 +23,10 @@
 ## View of progress
 
 ### Q1 2018 - Old Design
-![Old_Design](Old.PNG)
+![Old_Design](Old.png)
 
 ### Q2 2020 - Latest design
-![New_Design](SalesPitch.PNG)
+![New_Design](SalesPitch.png)
 
 
 ### Q1 2021 - Refracted FileSystem 
