@@ -1,0 +1,160 @@
+html{
+	height:100%;
+	width:100%;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+body{
+	
+	background-image:url("background.jpg");
+	height:90%;
+	padding-top:5%;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: large;
+}
+main{
+	background-image:url("background.jpg");
+}
+head{
+	/*needs to be minimum 128 pixles for logo image   */
+	min-height:128px;
+	position:fixed;
+	max-height:5%;
+	width:100%;
+}
+/*Gives  any table a 'grid' layout*/
+th, td{
+	border: 1px solid black;
+ }
+ /* makes password display grey */
+input.password,textarea{
+	 background-color:#4d5d77;
+	 border:0px;
+	 border-style:none;
+ }
+ der{
+	 font-weight:bold;
+	 font-size:150%
+ }
+.timeline-Tweet-text{
+	font.size : 12px !important;
+}
+ #headspace{
+	background-color:#327cf2;
+	float-top:0%;
+	padding:5%;
+	float-bottom:2%;
+	padding-bottom:0%;
+	width:100%;
+}
+ .menuitem{
+	display:inline-block;
+	color:black;
+	background-color:#ff9900;
+	width:100%;
+	border-radius:25px;
+	font-size:32px;
+	padding:10px;
+	float-bottom:10px;
+	color:black;
+}
+.readPanel{
+	padding:5%;
+	padding-left:2%;
+	float:2%;
+	background-color:#4d5d77;
+	border-radius:25px;
+}
+
+a {
+	color:#259b31;
+    text-decoration: none !important;
+}
+#InputText{
+	width:70%;
+	background-color:#a5b3c9;
+}
+input[type=text]{
+	background-color:#a5b3c9;
+	
+}
+input[type=submit]{
+	background-color:#a5b3c9;
+	border:none;
+	padding:1%;
+}
+
+
+
+	/* */
+ /* DESKTOP ONLY */
+ /*   */
+ 
+/*#4d5d77- grey 
+#327cf2 - blue
+#125acc- darkerblue
+  */
+ @media only screen and (min-width: 1000px) {
+#headspace{
+	background-color:#327cf2;
+	padding:0%;
+	width:100%;
+	float:0%;
+	min-height:128px;
+	max-height:20%;
+
+}
+#Image{
+	display:inline-block;
+	max-width:15%;
+	margin:0%;
+}
+#ZimaBlue{
+	display:inline-block;
+	margin:0%;
+	padding:0%;
+	min-width:80%;
+	min-height:200%;
+	height:100%;
+	width:90%;
+	border-radius:25px;
+	background-color:#125acc;
+}
+
+.readPanel{
+	margin-top:1%;
+	padding:4%;
+	padding-left:2%;
+	float:5%;
+	background-color:#4d5d77;
+	border-radius:25px;
+}
+.menuitem{
+	display:inline-block;
+	color:black;
+	background-color:#ff9900;
+	max-width:12%;
+	min-height:100%;
+	max-height:100%;
+}
+.displayTable{
+	border: 1px solid black;
+}
+.hiddenOver{
+	color:black;
+	background-color:#ff9900;
+	position: relative;
+	display: inline-block;
+}
+.hiddenUnder{
+	color:black;
+	background-color:#ff9900;
+	display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.hiddenOver:hover .hiddenUnder{
+	display:block;
+}
+ }

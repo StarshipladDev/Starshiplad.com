@@ -8,9 +8,9 @@
 
 ## Features(Planned In Brackets)
 
-> ( React Application )
+> React Application 
 
-> ( Proper project webpage instead of a redirect to )
+> Proper project webpage instead of a redirect to 
 
 > Inbuilt Twitter API
 
@@ -23,21 +23,29 @@
 ## View of progress
 
 ### Q1 2018 - Old Design
-![Old_Design](Old.PNG)
+![Old_Design](Old.png)
+
 ### Q2 2020 - Latest design
 ![New_Design](SalesPitch.PNG)
+
+
+### Q1 2021 - Refracted FileSystem 
+![New Github ](Removedir.png)
+
 ## Latest Build
-25/08/2020- Inital Build New Design
+22/02/2021 - Refractored FileSystem
 
 ## Latest Update
 
-25/08/2020- Inital Build New Design
+22/02/2021 - Update KillRoom.com
 
-> Updated README
+> Use Git CMD for Mass Upload
+
+> Add Canvas work to display new JS skills
 
 ## Next Build
 
-End Of September -React Wargame App
+End of July 2021 -React Wargame App
 
 * Simple Text-Based React App
 
