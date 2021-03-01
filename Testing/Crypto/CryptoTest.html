@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+</head>
+
+<body>
+<div id="title" style="background-color:darkGrey;width:100%;padding:3%;">
+
+</div>
+<div id="main">
+<button id="showCrypto"style="display:block;"> Show Crypto </button>
+
+<button id="runTest" type="button" onclick="runTest();return false;" style="display:inline-block;"> Run Test </button> <div id="test" style="display:block;"></div>
+
+<div id="testSectionHash" style="display:inline-block;">
+	<input id="inputText" type="text" default="Input Here" value="Input Here"></input>
+	<button id="runTest" type="button"	onclick="hashSample(); return false;">	Hash Text </button>
+	<div id="outputText" style="float:0px;border:solid;padding:1%;background-color:darkGrey;color:red;border-style:1px;border-color:gray">&nbsp;</div>
+</div>
+
+<div id="testSectionUnhash" style="display:inline-block;">
+	<input id="inputTextUnhash" type="text" default="Input Here" value="Input Here"></input>
+	<button id="runTestUnhash" type="button"	onclick="unhashSample(); return false;">	Unhash Text </button>
+	<div id="outputTextUnhash" style="float:0px;border:solid;padding:1%;background-color:darkGrey;color:red;border-style:1px;border-color:gray">&nbsp;</div>
+</div>
+</div>
+<script type="text/javascript" src="JavascriptTestingCrypto.js"> </script>
+</body>
+</html>
