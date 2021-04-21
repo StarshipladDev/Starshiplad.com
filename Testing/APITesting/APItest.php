@@ -60,7 +60,15 @@ Test 3 : Complete
 			</table>
 			</div>
 		</div>
-		
+		<div class ="Section">
+			<!--Container of 'results'-->
+			<div class="readPanel">
+				Starshiplad API test:<br>
+				<button id="starshipButton">API call</button>
+				<br>
+				<div id="TestStarshiplad"> </div>
+			</div>
+		</div>
 
 	</main>
 
@@ -126,10 +134,22 @@ function getAPIData(urlToCall){
 	drawResult("well child health services","Charities",result,"Contains",result.includes("well child health services"));
 		
 }
+
+function testStarshipladData(){
+	var obj = new XMLHttpRequest();
+	obj.open("GET","https://www.starshiplad.com/Testing/API",false);
+	obj.send(null);
+	var jsonFile = obj.responseText;
+	console.log("Pure JSON is : "+jsonFile);
+	jsonFile = JSON.parse(jsonFile);
+	document.getElementById("TestStarshiplad").innerHTML = jsonFile.updates[0].area;
+}
 //Set button to call API asserts on click
 document.getElementById("startButton").onclick=function(){
 	getAPIData("https://api.tmsandbox.co.nz/v1/Categories/6328/Details.json?catalogue=false");
 }
-
+document.getElementById("starshipButton").onclick=function(){
+	testStarshipladData();
+}
 </script>
 </html>
