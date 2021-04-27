@@ -10,7 +10,7 @@ Test 3 : Complete
 <head>
 <!--Import header via php-->
 <?php
-	include "header.php";
+	include "nuHeader.php";
 ?>
 </head>
 <!--Main section of content  -->
@@ -67,6 +67,26 @@ Test 3 : Complete
 				<button id="starshipButton">API call</button>
 				<br>
 				<div id="TestStarshiplad"> </div>
+			</div>
+		</div>
+		<!--
+		
+		
+		
+		Section for testing PHP , implemented 27/04/2021
+		
+		
+		-->
+		<div class ="Section">
+			<!--Container of 'results'-->
+			<div class="readPanel">
+				Starshiplad API PHP test(done live on TikTok (@starshipladdev)):<br>
+				This gets the 'Name' and 'job' values from a simple PHP JSON API at <a href ="https://www.starshiplad.com/Testing/API"> starshiplad.com/Testing/API </a> <br>
+				
+				<button id="starshipButtonPHP">PHP API Call</button>
+				<br>
+				
+				<div id="testStarshipladPhp"> </div>
 			</div>
 		</div>
 
@@ -137,12 +157,26 @@ function getAPIData(urlToCall){
 
 function testStarshipladData(){
 	var obj = new XMLHttpRequest();
-	obj.open("GET","https://www.starshiplad.com/Testing/API",false);
+	obj.open("GET","https://www.starshiplad.com/Testing/API/GetNotes.json",false);
 	obj.send(null);
 	var jsonFile = obj.responseText;
 	console.log("Pure JSON is : "+jsonFile);
 	jsonFile = JSON.parse(jsonFile);
 	document.getElementById("TestStarshiplad").innerHTML = jsonFile.updates[0].area;
+}
+/*
+
+TestStarshipladPhp is used to call a PHP JSON API, read its values rom a HTML request, and 
+edit the values of the div 'testStarshipladPhp' with the first returned 'name' and 'job' elements
+
+*/
+function TestStarshipladPhp (){
+	var xmlhttpRequest = new XMLHttpRequest();
+	xmlhttpRequest.open ("GET","https://www.starshiplad.com/Testing/API/",false);
+	xmlhttpRequest.send(null);
+	var returnedJSON = xmlhttpRequest.responseText;
+	var returnedJSONPure = JSON.parse(returnedJSON);
+	document.getElementById("testStarshipladPhp").innerHTML=("Name: "+returnedJSONPure.name + " // Job: "+returnedJSONPure.job );
 }
 //Set button to call API asserts on click
 document.getElementById("startButton").onclick=function(){
@@ -151,5 +185,9 @@ document.getElementById("startButton").onclick=function(){
 document.getElementById("starshipButton").onclick=function(){
 	testStarshipladData();
 }
+document.getElementById("starshipButtonPHP").onclick= function(){
+	TestStarshipladPhp();
+}
+
 </script>
 </html>
