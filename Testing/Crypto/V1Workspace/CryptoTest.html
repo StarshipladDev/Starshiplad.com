@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<Title>Crypto Test</Title>
+		<link rel="shortcut icon" type="image/jpg" href="favicon.jpg"/>
+		<style>
+			html{
+				margin:0px;
+				height:100%;
+				width:100%;
+			}
+			#titleSection{
+				background-color:darkGrey;
+				max-width:100%;
+				padding:3%;
+				font-size:300%;
+				color:#b34700;
+				text-align:center;
+			}
+			#title{
+				background-color:darkGrey;
+				max-width:100%;
+				padding:3%;
+			}
+			<!-- /*Light Grey , Dark Grey */-->
+			.sectionPart{
+				background-color:#b3b3b3;
+			}
+			.darkSection{
+				background-color:#706f6f;
+				padding-bottom:2%;
+				padding-top:2%;
+			}
+			der{
+				font-weight:bold;
+				font-size:150%;
+			}
+			input[type=text] ,input[type=password] {
+			  background-color:gray;
+			}
+			
+
+		</style>
+
+	</head>
+
+	<body>
+		<div id="dataHidden" style="display:none;"></div>
+		<div id="indexHidden" style="display:none;">000</div>
+
+		<div id="unhashedHidden" style="display:none;">000</div>
+		<div id="titleSection" >
+			<a style="font-size:25%">Developed by Starshiplad Discord :https://discord.com/invite/jAqfVpmqdA</a>
+			<a href="https://www.starshiplad.com">  <img src="https://www.starshiplad.com/LogoFull.png" alt="Starshiplad.Com" width="128" height="128"></a>	
+			StarshipladDev Crypto Test
+		</div>
+		<div id="title" > </div>
+		<div id="main">
+			
+			<!--
+
+				TITLE / CRYPTO CONTROLS
+
+			-->
+			<div class="darkSection" >
+			<button id="showCrypto"onclick="ShowCryptoButton();return false;"> Show Crypto </button> <a style="color:red;display:block;" /><a style="color:#b30000;display:inline-block;"> Press This to Change Title to the current BlockChain </a><a style="color:red;display:block;" />
+			<button  id="UnhashCrypto"onclick="UnhashCryptoButton();return false;" > Unhash Crypto </button> <a  style="color:#b30000;display:inline-block;"> Keep pressing this to see the un-encypted transactions from latest to first </a><a style="color:red;display:block;" />
+			<button  id="runTest" type="button" onclick="runTest();return false;" > Run Test </button> <div id="test" style="color:#b30000;display=inline-block;"></div><a style="color:#b30000;">Press this to run a 2 Block Blockchain test in the browser console. </a><a style="color:red;display:block;" />
+			</div>
+			<!--
+
+				TRANSACTION TEST DATA
+
+			-->
+			<div   class="sectionPart" id="testSectionAddHash" style="display:block;" >
+				Username:<input id="inputTextUsername" type="text" value="Username">
+				Password:<input id="inputTextPassword" type="password" >
+				Ammount:<input maxlength="1" id="inputTextAmmount" type="text" default="Input Here" value="Ammount">
+				To:<input id="inputTextTo" type="text"></input>
+			</div>
+			<!--
+
+				TRANSACTION TEST Buttons
+
+			-->
+			<div  class="darkSection" id="testSectionAddHashButton" style="display:block;" >
+				<button id="makeTrade" type="button" onclick="AddTransactionButton(); return false;">	Make Transaction </button>
+				<button id="getPublicUsername" type="button"	onclick="GetPublicUsernameButton(); return false;">	Get Public Username </button>
+				Public Username:<div id="publicUsernameDisplay" style="display:inline-block;float:0px;border:solid;padding:1%;background-color:darkGrey;color:#b30000;border-color:gray">&nbsp;</div>
+
+			</div>
+			<!--
+
+			INPUT TEST HASH
+
+			-->
+			<div   class="sectionPart"id="testSectionHash" style="display:block;" >
+				<input id="inputText" type="text" value="Input Here">
+				<button id="runTest" type="button"	onclick="hashSample(); return false;">	Hash Text </button>
+				<div id="outputText"style="display:inline-block;float:0px;border:solid;padding:1%;background-color:darkGrey;color:#b30000;border-color:gray">&nbsp;</div>
+			</div>
+			<!--
+			INPUT TEST UNHASH
+
+			-->
+			<div class="darkSection"  id="testSectionUnhash" style="display:block;" >
+				<input id="inputTextUnhash" type="text" value="Input Here">
+				<button id="runTestUnhash" type="button"	onclick="unhashSample(); return false;">	Unhash Text </button>
+				<div id="outputTextUnhash" style="display:inline-block;float:0px;border:solid;padding:1%;background-color:darkGrey;color:#b30000;border-color:gray">&nbsp;</div>
+			</div>
+			<!--
+				
+				HOW tO AND EXPLAINATION
+				
+			-->
+			<div   class="sectionPart" id="aboutSection" style="display:block;padding:5%;" >
+				<a style="font-size:50%"> Starshipbucks based of the following tutorial : https://www.youtube.com/watch?v=zVqczFZr124</a>
+				<br>
+				<der> How Crpto Works</der>
+				<br>
+				A good first place to see how crypto,blockchains and blocks work is this video:
+				<br>
+				<br>
+				<a href="https://www.youtube.com/watch?v=T_eMqVfO3VY" > Youtube Link</a>
+				<br>
+				<br>
+				Essentially , a 'blockchain' is a combination of every transaction or change to a set of things that has ever happened.
+				Everyone has access to the blockchain in its current form, so through crowdsourcing confirmation of data, all data and transactions
+				should be valid.<br>
+				
+				This means 'ownership' of data, like how many bitcoins someone owns, is not an acctualy stored value, but rather the sum of all
+				transactions or changes of data that persons 'identity' has been in, as stored by the blockchain.
+				<br>
+				A user's 'identity' is a combination of their username and password, which are hashed together (each letter/character is turned into 
+				a number, run through a algorithim and then the output number is turned back into a different character. ) 
+				This creates a 'public' identifier that everyone can see and interact with via transactions in the block chain.
+				
+				<br>
+				<der> How Sarshipbucks Work</der>
+				<br>
+				 <img src="faviconBig.jpg" width="128" height="128"><br><br>
+				 Starshipbucks are my own take on crypto currency and a way to test the functionality of blockchains.
+				 <br><br>
+				 First, to test the hashing algorithims I have made, There are 2 sections (7 & 8) where you can encrypt and decrypt data.<br>
+				 Enter either a word o number you would like to encrypt (7) or decrypt (8) and press the button ot display your text.
+				 <br><br>
+				 Next, find your public ID by entering a Username and Password in the 'Transaction' section (5). Press 'Get Public Username')<br>
+				 and your public 20-character username will appear nex to it.
+				 <br><br>
+				 To make a transaction, post a 20-character username into the 'to' field, an ammount of starshipbucks to transfer in 'ammount',<br>
+				 and your username and password, and click 'Make Transaction' to create the new block detailing tha transaction. (5)
+				 <br><br>
+				 Now your transaction block, along with all previous ones, is stored in the page. To show the whole encryped blockchain after<br>
+				 a transaction, press 'Show Crypto' (2). This will pos the entire encryped blockchain to the Title page (1).
+				 <br><br>
+				 After than, you can keep pressing 'Unhash Crypto', each time it will decrypt the latest block in the blockchain.
+				 <br><br>
+				 By decyrpting all transactions, a known ledger of what ammoun each indentity has can be found.
+				 <br><br>
+				 Made 03/03/2021 by Starshipladdev (https://github.com/StarshipladDev)
+				 <br> <br>
+				 See the below Image for a guide:
+				 <br>
+				 <img src="guide.png" width="640" height="640">
+			</div>
+		</div>
+		<script type="text/javascript" src="JavascriptTestingCrypto.js"> </script>
+	</body>
+</html>

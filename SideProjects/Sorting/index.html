@@ -1,0 +1,268 @@
+<link rel="icon" type="image/png" href="http://www.starshiplad.com/favicon.png"/>
+<meta name="content" content="The Home of Starshiplad">
+<Title> "Starshiplad's Home"</Title>
+</head>
+<body>
+<div id="headSpace">
+<div class="menuitem"><a href="http://www.starshiplad.com/index.php">Home</a></div>
+<div class="menuitem"><a href="https://github.com/StarshipladDev">Projects</a></div>
+<div class="menuitem"><a href="http://www.starshiplad.com/input.php">Input Info</a></div>
+<div class="hiddenOver menuitem" ><a href="http://www.starshiplad.com/output.php">Output Info</a>
+	<div class="hiddenUnder">
+		<div class="menuitem"><a href="http://www.starshiplad.com/search.php">Search Names</a> </div> 
+		<br>
+		<div class="menuitem"><a href="http://www.starshiplad.com/halloffame.php">XSS Hall Of Fame</a> </div>
+	</div>
+</div>
+<div class="menuitem"><a href="http://www.starshiplad.com/proof.php">Hack Proof</a></div>
+<div class="menuitem"><a href="http://www.starshiplad.com/roleplayinggames.php">RPGs</a></div>
+</div>
+<link rel="import" href="headerObject.html">
+  <style>
+
+        td{
+
+         border: 1px solid black;  
+
+        }
+
+        html{
+
+            background-color:grey;
+
+        }
+
+        table{
+
+            background-color:Isabelline;
+
+        }
+
+        </style>
+        <h1>Table</h1>
+
+        <div id="unorderedList" style="display:none"></div>
+
+ 
+
+        <div id="countDoc" style="display:none"></div>
+
+ 
+
+        <div id="timeDoc" style="display:none"></div>
+
+            New number : <input type="text" id="newNumber">
+
+            <br>
+
+            <button onclick="onClick()" id="button"> Submit </button>
+
+            <br><table>
+
+                <tbody>
+
+                    <tr id="numbersTable"></tr>
+
+                   
+
+                </tbody>
+
+            </table>
+
+            <br>
+
+            <span style="font-weight:bold">'Sorted:'</span>
+
+            <table>
+
+                <tbody>
+
+                    <tr id="numbersTableOrdered"></tr>
+
+                </tbody>
+
+            </table>
+
+            <button onclick="sortTable()" id="sortButton"> Sort </button>
+
+            <br>
+
+            <div id="loadingScreen"></div>
+
+   
+
+    <script>
+
+function onClick(){
+
+    var newNumber =document.getElementById("newNumber").value;
+
+    document.getElementById("unorderedList").innerHTML+=newNumber+",";
+
+    document.getElementById("numbersTable").innerHTML+="<td>"+newNumber+"</td>";
+
+}
+
+function sortTable(){
+
+        var countDoc= document.getElementById("countDoc")
+
+        var count= countDoc.innerHTML;
+
+        if(isNaN(count) || count==""){
+
+            count=0;
+
+        }
+
+        count= parseInt(count);
+
+ 
+
+        var timeDoc= document.getElementById("timeDoc")
+
+        var time= timeDoc.innerHTML;
+
+        if(isNaN(time) || time==""){
+
+            time=0;
+
+        }
+
+        time= parseInt(time);
+
+ 
+
+        var loadingScreenDiv = document.getElementById("loadingScreen");
+
+        if(loadingScreenDiv.innerHTML=""){
+
+            loadingScreenDiv.innerHTML='<img src =https://cdn.dribbble.com/users/1186261/screenshots/3718681/_______.gif height="50px" width="50px" />';
+
+        }
+
+        console.log("sortng with time "+time);
+
+        var startTime=new Date();
+
+        var OrderedList=[];
+
+        var indexesInAlready=[];
+
+        var i=0;
+
+        var unorderedList=[];
+
+        var unorderedList1= document.getElementById("unorderedList").innerHTML.split(",");
+
+        for(var ff=0;ff<unorderedList1.length;ff++){
+
+            if(! isNaN(unorderedList1[ff]) && unorderedList1[ff]!="" && unorderedList1[ff]!=" " && unorderedList1[ff]!=null ){
+
+                unorderedList.push(unorderedList1[ff].trim());
+
+            }
+
+        }
+
+        console.log("unorderedList is ",unorderedList);
+
+        while(i< unorderedList.length){
+
+            var isIn=false;
+
+            var newIndex= Math.floor(Math.random()*unorderedList.length);
+
+            while(!isIn){
+
+                newIndex= Math.floor(Math.random()*unorderedList.length);
+
+                if(! indexesInAlready.includes(newIndex)){
+
+                    indexesInAlready.push(newIndex);
+
+                    isIn=true;
+
+                }
+
+            }
+
+            console.log("Pushin index "+newIndex+" which is "+ unorderedList[newIndex]);
+
+            OrderedList.push(unorderedList[newIndex]);
+
+            i++;
+
+        }
+
+        console.log("Emptying sortedTable");
+
+        document.getElementById("numbersTableOrdered").innerHTML="";
+
+        var sorted=true;
+
+        for(var f=0; f<OrderedList.length;f++){
+
+            document.getElementById("numbersTableOrdered").innerHTML+="<td>"+OrderedList[f]+"</td>";
+
+             for(var z=0; z<f;z++){
+
+                if(parseInt(OrderedList[z])>parseInt(OrderedList[f])){
+
+                    sorted=false;
+
+                }
+
+            }
+
+        }
+
+        console.log("\'sorted\' as "+OrderedList);
+
+        time=Math.round(time+(new Date()-startTime));
+
+        document.getElementById("numbersTableOrdered").innerHTML+="</tr><tr><td> And it only took "+Math.round(time/1000)+" seconds!(+ rendering time)</td>";
+
+        timeDoc.innerHTML=time;
+
+        countDoc.innerHTML=time;
+
+        if(! sorted){
+
+            console.log("Not sorted, re-running");
+
+            console.log("time is "+time+" and math round time is "+Math.round(time/1000));
+
+            if(count%5==0){
+
+                console.log("\n \n \n \n Setting timeout \n \n \n \n");
+
+                setTimeout(sortTable,10);
+
+            }
+
+            else{
+
+                sortTable();
+
+            }
+
+        }
+
+        else{
+
+            loadingScreenDiv.innerHTML="";
+
+        }
+
+           
+
+    }
+
+    document.getElementById("button").onClick = onClick;
+
+    document.getElementById("sortButton").onClick = sortTable;
+
+</script>
+
+</div></body></html>

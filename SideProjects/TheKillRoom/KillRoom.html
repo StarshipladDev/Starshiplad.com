@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<Title>The Killing Room!</Title>
+</head>
+<body>
+	<div id="body" style="font-size:500%;"> </div>
+
+	<img alt="Image" src=""></img>
+		
+	<script>
+		/*  On a 50% chance, the webpage displays "You died!" */
+		/* Otherwise , dispalys "You survived!" */
+		if(Math.floor(Math.random() * 10 >5) ){
+			document.getElementById("body").innerHtml="You Died!"
+				document.getElementById("bodyImage").innerHtml="Died.png"; 
+				document.getElementById("body").style.color="red";
+
+
+		}else{
+			document.getElementById("body").innerHtml="You Survived! (For now)"; 
+			document.getElementById("bodyImage").innerHtml="Survive.png"; 
+			document.getElementById("body").style.color="green";
+		}
+	</script>
+</body>

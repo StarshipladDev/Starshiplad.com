@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"> </canvas>
+    <button id="drawButton" onclick="drawCircle()">Re-draw </button>
+	<script>
+		function drawCircle() {
+		  var canvas1 = document.getElementById('myCanvas');
+		  var canvas = canvas1.getContext("2d");
+		  canvas.clearRect(0, 0, 500, 500);
+		  //Head 95,50,135,90
+		  //Body 50,90,155,200
+		  //Left Arm 50,90,10,200
+		  // Right Arm 180,90,195,180
+		  //Legs 50,200,155,400
+		  //head
+		  canvas.beginPath();
+		  canvas.arc(95, 50, 40, 0, 2 * Math.PI);
+		  canvas.stroke();
+		  //Body
+		  canvas.moveTo(50, 90);
+		  canvas.lineTo(155, 90);
+		  canvas.lineTo(155, 200);
+		  canvas.lineTo(50, 200);
+		  canvas.lineTo(50, 90);
+		  canvas.stroke();
+		  //Legs
+		  canvas.moveTo(50, 200);
+		  canvas.lineTo(50, 400);
+		  canvas.lineTo(90, 400);
+		  canvas.lineTo(90, 250);
+		  canvas.lineTo(110, 250);
+		  canvas.lineTo(110, 400);
+		  canvas.lineTo(155, 400);
+		  canvas.lineTo(155, 200);
+		  canvas.stroke();
+		  //LeftArm
+		  canvas.moveTo(50, 90);
+		  canvas.lineTo(10, 90);
+		  canvas.lineTo(10, 180);
+		  canvas.lineTo(50, 180);
+		  canvas.stroke();
+		  //RightArm
+		  canvas.moveTo(155, 90);
+		  canvas.lineTo(195, 90);
+		  canvas.lineTo(195, 180);
+		  canvas.lineTo(155, 180);
+		  canvas.stroke();
+		  //Stuff
+		  canvas.moveTo(0, 0);
+		  canvas.lineTo(100, 0);
+		  canvas.stroke();
+		  canvas.fillStyle = "rgb(0,255,255)";
+		  canvas.fillRect(0, 0, 40, 40);
+
+		  //Wounds
+		  canvas.fillStyle = "rgb(255,0,10)";
+		  var alive = true;
+		  var damage = 0;
+		  for (var i = 0; i < (Math.random() * 10) - 8; i++) {
+			alive = false;
+			damage += Math.floor(Math.random() * 10);
+
+			canvas.beginPath();
+			canvas.arc(Math.floor(Math.random() * 40) + 95, Math.floor(Math.random() * 40) + 50, 5, 0, 2 * Math.PI);
+			canvas.fill();
+			canvas.stroke();
+
+		  }
+		  //Body
+		  for (var i = 0; i < (Math.random() * 10) - 7; i++) {
+			alive = false;
+			damage += Math.floor(Math.random() * 5);
+			canvas.beginPath();
+			canvas.arc(Math.floor(Math.random() * 145) + 10, Math.floor(Math.random() * 110) + 70, 5, 0, 2 * Math.PI);
+			canvas.fill();
+			canvas.stroke();
+
+		  }
+		  //Legs
+		  for (var i = 0; i < (Math.random() * 10) - 8; i++) {
+			alive = false;
+
+			damage += Math.floor(Math.random() * 5);
+
+			canvas.beginPath();
+			canvas.arc(Math.floor(Math.random() * 105) + 50, Math.floor(Math.random() * 200) + 200, 5, 0, 2 * Math.PI);
+			canvas.fill();
+			canvas.stroke();
+
+		  }
+		  if (alive) {
+			canvas.fillStyle = "rgb(0,255,0)";
+			canvas.font = '48px serif';
+			canvas.fillText('Alive!', 10, 448);
+		  } else {
+			canvas.fillStyle = "rgb(200,0,0)";
+			canvas.font = '48px serif';
+			canvas.fillText('Damage: ' + damage, 10, 448);
+
+		  }
+		}
+		drawCircle();
+		document.getElementById('drawButton').onclick = drawCircle;
+	</script>
+  </body>
+</html>

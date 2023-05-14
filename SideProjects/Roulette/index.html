@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html style='background-color:LightGray;'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>Roulette</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- If not '1' or 'true', alert messages for developer debugging will not show -->
+<div style='visibility:hidden;' id="debug">0</div>
+  <h1 style='color:red; display:inline-block;'>Roul</h1><h1 style=' display:inline-block;'>ette</h1>
+  
+  <div id="test">
+	A 2 Hour JS program developed at a NZ christmas party 2020.
+	You may type "red","black" or a number into the 'pick' text box. <p> 
+	If the ball lands on your guessed value or color, you will win 36 or 2 times whatever value you put into the 'bet' field.
+  </div>
+  <!-- Where Main.js draws roulette table to-->
+  <div id="main" style='background-color : grey; width: 50%;'></div>
+  <div id="values"  style='background-color : grey;'> 
+	Roll ball:
+	<input type="button" id ="buttonboi" value="Roll"></input>
+	<p>Bet:
+	<input type="text" id ="bet"> </input>
+	<p>
+	<div style='background-color:LightGray;max-width:12.5%;'>
+		Options:<p>
+		0-36 : Pays x 36 <p>
+		Red  : Pays x 2  <p>
+		Black: Pays x 2
+	
+	</div>
+	<p>Pick:
+	<input type="text" id="pick"> </input>
+	<p>Cash:
+	<div id="cash" style='color:gold;'>500</div>
+  </div>
+  <script src="Main.js"></script>
+  <!--Website image-->
+  <div id="footer">
+	<a href="www.starshiplad.com"><img style="width:50px;height:auto;display:inline-block; border-radius:50%;"src="https://www.starshiplad.com/LogoFull.png" /></a> Created by Starshipladdev. Website Link.</a>
+  </div>
+</body>
+
+
+
+
+</html>

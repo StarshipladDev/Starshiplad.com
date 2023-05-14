@@ -1,0 +1,244 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<Title>
+		WorldBuilding Sim!
+	</Title>
+</head>
+<body>
+<script>
+function runWorldGen(){
+	var x=0;
+    var y=0;
+    var world=[];
+	var worldSize=250;
+    for(var i=0; i<worldSize;i++){
+        world.push([]);
+        for(var z=0; z<worldSize;z++){
+
+            world[i].push([]);
+
+        }
+
+    }
+
+    var ctx = document.getElementById('canvas').getContext('2d');
+
+    ctx.strokeStyle = "#FF0000";
+	var countsToRun=200;
+	
+	var typesOfNames=[];
+	typesOfNames.push("#3366cc");
+	typesOfNames.push("#0099ff");
+	typesOfNames.push("#669900");
+	typesOfNames.push("#006600");
+	typesOfNames.push("#009933");
+	typesOfNames.push("#99cc00");
+	typesOfNames.push("#666633");
+	typesOfNames.push("#CCCCCC");
+	typesOfNames.push("#EEEEEE");
+	
+    for(var i=0; i< countsToRun ;i++){
+
+        theTimeoutFuncton(i,world,ctx,countsToRun,typesOfNames,worldSize)
+
+    }
+}
+
+
+ 
+
+ 
+
+function drawLines(world,ammount=5,type=1,countsToRun=20){
+
+    var rivers=ammount;
+
+    var length= world[0].length;
+
+    var xInts = Array(rivers).fill(0);
+
+    var yInts = Array(rivers).fill(0);
+
+    for(var i=0;i<xInts.length;i++){
+
+        xInts[i]=Math.floor(Math.random()*world[0].length);
+
+        yInts[i]=Math.floor(Math.random()*world[0].length);
+
+        var xdirection =Math.floor(Math.random()*3)-1;
+
+        var ydirection =Math.floor(Math.random()*3)-1;
+
+        for(var z=0;z<world[0].length;z++){
+
+            if(xInts[i]<length-1 && xInts[i]>1){
+
+                if(yInts[i]<length-1 && yInts[i]>1){
+
+                    world[xInts[i]][yInts[i]]=type;
+
+                    world[xInts[i]+xdirection][yInts[i]+ydirection]=type;
+
+                }
+
+                else{
+
+                    xdirection =Math.floor(Math.random()*3)-1;
+
+                    ydirection =Math.floor(Math.random()*3)-1;
+
+                }
+
+                if(Math.floor(Math.random()*2)==1){
+
+                    xInts[i]=xInts[i]+(xdirection+Math.floor(Math.random()*3)-1);
+
+                }
+
+               
+
+                if(Math.floor(Math.random()*2)==1){
+
+                    yInts[i]=yInts[i]+(ydirection+Math.floor(Math.random()*3)-1);
+
+                }
+
+            }
+
+            else{
+
+                xdirection =Math.floor(Math.random()*3)-1;
+
+                ydirection =Math.floor(Math.random()*3)-1;
+
+            }
+
+        }
+
+    }
+
+    return world;
+
+}
+
+ 
+
+function theTimeoutFuncton(count,world,ctx,countsToRun=20,typesOfNames=["FFFFFF"],worldSize=50){
+
+    setTimeout(function (){world = generateLand(world,ctx,count,countsToRun,typesOfNames,worldSize)},100*count);
+
+}
+
+ 
+
+function generateLand(world,ctx,count,countsToRun,typesOfNames,worldSize){
+
+for(var i=0; i<worldSize;i++){
+
+        for(var f=0; f<worldSize;f++){
+
+            world[i][f]=getNearbyLands(world,i,f,typesOfNames);
+
+        }
+
+    }
+
+if(count==countsToRun-1){
+	typesOfNames.push("#0001FF");
+	typesOfNames.push("#EE1111");
+    console.log("count "+count+" drawing rivers");
+    world= drawLines(world);
+    world= drawLines(world,8,10);
+
+}
+
+drawWorld(ctx,world,typesOfNames,2,worldSize);
+
+return world;
+
+ 
+
+}
+
+function drawWorld(ctx,world,typesOfNames,size=2,worldSize=50){
+
+    ctx.fillStyle = "#DDDDDD";
+
+    for(var i=0; i<worldSize;i++){
+
+        for(var f=0; f<worldSize;f++){
+			ctx.fillStyle= typesOfNames[world[i][f]];
+            ctx.fillRect(i*size,f*size,size,size);
+
+        }
+
+    }
+
+}
+
+function getNearbyLands(world,xPos,yPos,typesOfNames){
+
+    var neighbourHighest=0;
+
+    var winningIndex=0;
+
+    var ClosestNeighbour=Array(typesOfNames.length).fill(0);
+
+    for(x=-1;x<2;x++){
+
+        for(y=-1;y<2;y++){
+
+            if(yPos+y>-1 && yPos+y<world[0].length){
+
+                if(xPos+x>-1 && xPos+x<world[0].length){
+
+                    ClosestNeighbour[world[xPos+x][yPos+y]]=ClosestNeighbour[world[xPos+x][yPos+y]]+1;
+
+                    if(neighbourHighest<ClosestNeighbour[world[xPos+x][yPos+y]]){
+
+                        neighbourHighest=ClosestNeighbour[world[xPos+x][yPos+y]];
+
+                        winningIndex=world[xPos+x][yPos+y];
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    var value = ( ( Math.floor(Math.random()*typesOfNames.length) ) );
+
+    if (Math.floor(Math.random()*(neighbourHighest+1))>0){
+
+        switch(Math.floor(Math.random()*2)){
+
+               case 0:
+
+                    value = winningIndex;
+
+                    break;
+
+               case 1:
+
+                    value=winningIndex + (Math.floor(Math.random()*3)-1);
+
+                    break;
+
+        }
+
+    }
+
+    return value%typesOfNames.length;
+
+}
+document.getElementsByTagName('html')[0].innerHTML='<button id="button" onclick="runWorldGen()">Run Sim</button><br>';
+document.getElementsByTagName('html')[0].innerHTML+='<canvas id="canvas" height=500 width=500> </canvas>';
+document.getElementById('button').onclick=runWorldGen;
+</script>
+</body>
+</html>

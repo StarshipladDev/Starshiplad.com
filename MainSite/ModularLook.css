@@ -1,0 +1,247 @@
+
+/*
+  !!!!! Title :  SHOULD BE THIS BUT ISN"T#cc0000 !!!!!!
+#008060 - Darker shade, Black text - Title
+Section :  #00cc99 - Shadow white text 
+Background/Main Grey : #4d4d4d : 15% on each side
+Sides(body) & Title:#ff4d4d 
+White/Tan sections that split up 'Sections' #4d4d4d 
+
+
+STYLE2:
+
+#1f7d38 - Darker shade, Black text - Title
+Section :  #279c46 - Shadow white text 
+Background/Main Grey : #4d4d4d : 15% on each side
+Sides(body) & Title:#f7951e
+White/Tan sections that split up 'Sections' #4d4d4d 
+*
+
+Safe fonts:
+Arial
+Times New Roman
+Times
+Courier 
+Verdana
+Georgia
+Palatino
+Garamond
+Bookman
+/*
+
+
+GENERIC ASPECTS SUCH AS COLOURS
+
+
+
+*/
+/* Reset values to 0*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html{
+	font-family : "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width:100%;
+	height:100%;
+}
+body{
+	width:100%;
+	height:100%;
+	background-color:#ff4d4d ;
+}
+a {
+		color:#ff4d4d ;
+		text-decoration: none !important;
+	}
+der{
+	 font-weight:bold;
+	 font-size:150%;
+	 shadow: 1px 1px #000000;
+	}
+button {
+  background-color: #008060; /* Green */
+  border-color: black;
+  color: white;
+  padding: 15px 32px;
+}
+#ZimaBlue{
+	font-size:140%:
+}
+#main{
+	font-family : Bookman;
+	background-color:#4d4d4d;
+}
+.headerSection{
+	
+	background-color:#008060 ;
+	color:white;
+	text-shadow: 1px 1px #000000;
+	text-align:center;
+	
+}
+.readPanel{
+	background-color:#00cc99;
+	color:white;
+	font-size: 100%;
+	text-align:center;
+}
+.menuitem a{
+	color:black;
+}
+.menuitem{
+	background-color:#ff4d4d;
+	font-size:1em;
+}
+
+.square{
+	height:50px;
+	width: auto;
+	border-radius: 50%;
+}
+.menuImage{
+	height:1em;
+	}
+/*
+
+
+MOBILE LESS THAN 1000 PX
+
+
+*/
+@media only screen and (max-width:999px){
+	
+	
+	
+}
+
+/*
+
+
+
+DESKTOP VERSION
+
+
+*/
+@media only screen and (min-width: 1000px) {
+	
+	
+	body{
+		height: 100%;
+		padding:0px;
+	}
+	img{
+		max-width:100%;
+		max-height:100%;
+	}
+	#ZimaBlue{
+		display:inline;
+		border-collapse: separate;
+    border-spacing: 20px;
+		text-align: center;
+		margin:1%;
+		padding:0px;
+		margin-top:0%;
+	}
+	#main{
+		width:70%;
+		margin:10%;
+		padding-left:5%;
+		padding-right:5%;
+		margin-top:0px;
+		padding-top:15%;
+		padding-bottom:0px;
+		border-radius:25px;
+		border: 1px solid black;
+		margin-top:5%;
+	}
+	#headSpace{
+		
+		background-color:#4d4d4d;
+		display:table;
+		text-align: center;
+		position: fixed;
+		width:100%;
+		top: 0px;
+		margin-left: 0px;
+		margin-top:0px;
+		padding-top:0px;
+		padding-bottom:1%;
+		float:0%;
+
+	}
+	#Image{
+		display:inline-block;
+		padding: 2%;
+		margin-bottom: 0%; 
+		
+		max-width:12%;
+		min-width: 8%;
+		min-height:100%;
+		max-height:100%;
+	}
+	.readPanel{
+		border-radius:25px;
+		border: 1px solid black;
+	}
+	.Section{
+		width:100%;
+		border-collapse: separate;
+		border-spacing: 20px;
+	}
+	.half{
+		width:40%;
+		padding:2%;
+		margin:2%;
+		padding:2%;
+		display:table-cell;
+	}
+	.full{
+		width:90%;
+		padding:2%;
+		display:table-cell;
+	}
+	.headerSection{
+		border-radius:25px;
+		border: 1px solid black;
+		max-width : 100%;
+		margin:1%;
+		padding:2%;
+		padding-bottom: :0px;
+		margin-bottom: 0px;
+		font-size: 160%;
+	}
+	.hiddenOver{
+		position: relative;
+		display: inline-block;
+	}
+	.hiddenUnder{
+		display:  none !important;
+		position: absolute;
+		min-width: 100%;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		margin: 0px;
+		font-size:1em;
+	}
+	.hiddenOver:hover .hiddenUnder{
+		 display:block !important;
+		background-color:#cc0000;
+	}
+	.menuitem:hover{
+		box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
+	}
+	.menuitem{
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		display:inline-block;
+		border-radius: 5px;
+		padding: 1%;
+		margin-bottom: 0%; 
+		max-width:80%;
+		min-width: 8%;
+		min-height:100%;
+		max-height:100%;
+		
+	}
+}
