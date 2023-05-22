@@ -60,7 +60,7 @@
 		  canvas.fillStyle = "rgb(255,0,10)";
 		  var alive = true;
 		  var damage = 0;
-		  for (var i = 0; i < (Math.random() * 10) - 8; i++) {
+		  for (var i = 0; i < (Math.random() * 100) - 8; i++) {
 			alive = false;
 			damage += Math.floor(Math.random() * 10);
 
@@ -71,7 +71,7 @@
 
 		  }
 		  //Body
-		  for (var i = 0; i < (Math.random() * 10) - 7; i++) {
+		  for (var i = 0; i < (Math.random() * 100) - 7; i++) {
 			alive = false;
 			damage += Math.floor(Math.random() * 5);
 			canvas.beginPath();
@@ -81,7 +81,7 @@
 
 		  }
 		  //Legs
-		  for (var i = 0; i < (Math.random() * 10) - 8; i++) {
+		  for (var i = 0; i < (Math.random() * 100) - 8; i++) {
 			alive = false;
 
 			damage += Math.floor(Math.random() * 5);
@@ -99,7 +99,7 @@
 		  } else {
 			canvas.fillStyle = "rgb(200,0,0)";
 			canvas.font = '48px serif';
-			canvas.fillText('Damage: ' + damage, 10, 448);
+			canvas.fillText('Damage Cunt: ' + damage, 10, 448);
 
 		  }
 		}

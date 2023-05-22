@@ -1,0 +1,48 @@
+<html>
+
+	<head>
+	<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body id="mainForm" onload="populatesvg()">
+		<script src="script.js"> </script>
+		<div id="main" >
+			<div class="textBox">
+				Below is the card you have selected:
+				<div class="superImage">
+					
+					<svg id="formSvg" height="250" width="150">
+					
+					</svg>
+					
+					<img id="formImage" y="20" x="0" height="100" width="150" />
+				</div>
+			</div>
+			<div class="textBox">
+				Select A Card To Read: <br>
+				<input type="text" id="cardSelector"> </input>
+				<button onclick="enterId()">Select</button>
+			</div>
+			<div class="textBox">
+				<b> Hey you! Want to make a card? Enter The Details Below:</b>: <br>
+				
+				<form action="API/input.php" method="post" enctype="multipart/form-data">
+					Name: <br><input type="text" name="name"><br>
+					Release Number (1 As Test): <br><input type="text" name="release"><br>
+					Type Of Card: <br>
+					<select  name="type" id="typeForm">
+					  <option value="Gun">Gun</option>
+					  <option value="Armour">Armour</option>
+					  <option value="Drug">Drug</option>
+					  <option value="Hero">Hero</option>
+					</select><br>
+					File(Please make it a 150px x 100px Image: 
+					<br>
+					<input type="file" name="imageFile" id="imageFile" text="150x100">
+					<br>
+					<input type="submit" value="Submit" name="Submit">
+					</form>
+			</div>
+		</div>
+	</body>
+</html>

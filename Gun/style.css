@@ -1,0 +1,54 @@
+
+
+html{
+	width:100%;
+	height:100%;
+	margin:0px;
+	
+}
+
+/* Main Page background */
+#mainForm{
+	background-color: darkblue;
+	width:100%;
+	height:100%;
+}
+#main{
+	height:100%;
+	width:80%;
+	margin-left:10%;
+	background-color: darkgrey;
+}
+
+/* Classes */
+
+.textBox{
+	background-color: lightgrey;
+	border: 1px solid black;
+	border-radius:25px;
+}
+
+/*svg classes */
+.form{
+	background-color:grey;
+}
+.cardBorder{
+	fill: none;
+	stroke-width:1;
+	stroke:rgb(0,0,0);
+}
+.superImage{
+	position: relative;
+	display : inline-block;
+	
+}
+.superImage img{
+	position: absolute;
+	
+	top:470;
+}
+.superImage svg{
+	position: absolute;
+	top:450;
+	left:0;
+}
